@@ -8,6 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.kichukkhon.emergencyservice.Create.CreateAmbulance">
 
     <TextView
@@ -16,92 +17,69 @@
         android:text="@string/title_ambulance"
         android:textSize="25sp"
         android:layout_marginBottom="20dp"/>
-    <LinearLayout
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="@string/area"
+        android:layout_gravity="center"
+        android:textSize="@dimen/tv_text_size"/>
+
+    <Spinner
+        android:id="@+id/spinnerArea"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin_bottom"/>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/area"
-            android:textSize="@dimen/tv_text_size"
-            android:layout_weight="1"/>
-
-        <Spinner
-            android:id="@+id/spinnerArea"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_bottom"
-            android:layout_weight="2"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/hospital_name"
-            android:textSize="@dimen/tv_text_size"
-            android:layout_weight="1"/>
         <EditText
             android:id="@+id/txtOrgName"
-            android:layout_width="0dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_bottom"
             android:hint="@string/org_name"
-            android:textSize="@dimen/et_text_size"
-            android:layout_weight="2"/>
+            android:layout_gravity="center"
+            android:textSize="@dimen/et_text_size"/>
+    </android.support.design.widget.TextInputLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            android:textSize="@dimen/tv_text_size"
-            android:layout_weight="1"/>
         <EditText
             android:id="@+id/txtAddress"
-            android:layout_width="0dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_bottom"
             android:hint="@string/address"
-            android:textSize="@dimen/et_text_size"
-            android:layout_weight="2"/>
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:textSize="@dimen/et_text_size"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <LinearLayout
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/phone_no"
-            android:textSize="@dimen/tv_text_size"
-            android:layout_weight="1"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
         <EditText
             android:id="@+id/txtPhoneNo"
-            android:layout_width="0dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="@string/phone_no"
-            android:textSize="@dimen/et_text_size"
-            android:layout_weight="2"/>
+            android:layout_gravity="center"
+            android:textSize="@dimen/et_text_size"/>
 
-    </LinearLayout>
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btnSaveAmbulance"

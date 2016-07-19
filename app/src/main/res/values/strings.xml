@@ -7,13 +7,17 @@
     <string name="police_station">Police Station</string>
     <string name="splash_display">Bangladesh \n Emergency Service</string>
 
+    <!--Admin activity-->
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+
     <!--Create Activity-->
     <string name="title_ambulance">Create Ambulance Information</string>
     <string name="title_fire_service">Create Fire Service Information</string>
     <string name="title_police_station">Create Police Information</string>
 
     <string name="org_name">Name of Organization</string>
-    <string name="area">Area</string>
+    <string name="area">Select area</string>
     <string name="hospital_name">Hospital</string>
     <string name="address">Address</string>
     <string name="phone_no">Phone Number</string>

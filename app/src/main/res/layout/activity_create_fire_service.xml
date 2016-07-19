@@ -18,43 +18,51 @@
         android:layout_marginBottom="20dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:text="@string/area"
+        android:layout_gravity="center"
         android:textSize="@dimen/tv_text_size"/>
     <Spinner
         android:id="@+id/spinnerArea"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="10dp"/>
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/address"
-        android:textSize="@dimen/tv_text_size"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <EditText
-        android:id="@+id/txtAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:hint="@string/address"/>
+        <EditText
+            android:id="@+id/txtAddress"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:hint="@string/address"
+            android:layout_gravity="center"
+            android:textSize="@dimen/et_text_size"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phone_no"
-        android:textSize="@dimen/tv_text_size"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
-    <EditText
-        android:id="@+id/txtPhoneNo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:hint="@string/phone_no"/>
+        <EditText
+            android:id="@+id/txtPhoneNo"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/phone_no"
+            android:layout_gravity="center"
+            android:textSize="@dimen/et_text_size"/>
+
+    </android.support.design.widget.TextInputLayout>
+
     <Button
         android:id="@+id/btnSaveFire"
         android:layout_width="wrap_content"
