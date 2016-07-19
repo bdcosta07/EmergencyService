@@ -3,6 +3,7 @@ package com.kichukkhon.emergencyservice.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,11 +36,18 @@ public class FireServiceActivity extends ESBaseActivity {
     FireServiceManager fireServiceManager;
     AreaManager areaManager;
     SharedPreference preference;
+    private Toolbar mToolbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_service);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         lvFireService=(ListView)findViewById(R.id.lvFireService);
         spinnerArea=(Spinner)findViewById(R.id.spinnerArea);
