@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- Single menu item
          Set id, icon and Title for each menu item
     -->
     <item android:id="@+id/menu_admin"
-        android:title="Admin" />
+        android:title="Admin"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
     <item android:id="@+id/menu_logout"
-        android:title="Logout" />
+        android:title="Logout"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
     <item android:id="@+id/menu_setting"
-        android:title="Setting" />
+        android:title="Setting"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
     <item android:id="@+id/menu_home"
-        android:title="Home" />
+        android:title="Home"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 
 
 </menu>
