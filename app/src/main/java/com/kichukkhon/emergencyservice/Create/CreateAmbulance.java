@@ -46,7 +46,7 @@ public class CreateAmbulance extends AppCompatActivity {
         //List<String> areaList = new ArrayList<String>();
 
         ArrayAdapter<Areas> dataAdapter = new ArrayAdapter<Areas>(this, android.R.layout.simple_spinner_item, areaList);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
     }
