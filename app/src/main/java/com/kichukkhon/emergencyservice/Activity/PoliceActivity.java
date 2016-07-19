@@ -53,7 +53,7 @@ public class PoliceActivity extends ESBaseActivity {
         List<Areas> areaList= areaManager.getAllAreas();
 
         ArrayAdapter<Areas> dataAdapter = new ArrayAdapter<Areas>(this, android.R.layout.simple_spinner_item, areaList);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
         int selectedAreaId=1; //has to be fetched from pref
