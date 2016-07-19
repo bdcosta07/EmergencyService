@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Emergency Service</string>
+
+    <!--Splash and MainActivity-->
+    <string name="fire_service">Fire Service</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="police_station">Police Station</string>
+    <string name="splash_display">Bangladesh \n Emergency Service</string>
+
+    <!--Create ambulance Activity-->
+    <string name="title">Create Ambulance Information</string>
+    <string name="org_name">Name of Organization</string>
+    <string name="area">Area</string>
+    <string name="hospital_name">Hospital</string>
+    <string name="address">Address</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="btn_save">Save</string>
+    <string-array name="areas">
+
+    </string-array>
+</resources>

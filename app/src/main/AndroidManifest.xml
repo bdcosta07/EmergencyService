@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kichukkhon.emergencyservice">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.AdminActivity" />
+        <activity android:name=".Activity.AmbulanceActivity" />
+        <activity android:name=".Activity.PoliceActivity" />
+        <activity android:name=".Activity.FireServiceActivity" />
+        <activity android:name=".Create.CreateAmbulance" />
+        <activity android:name=".Create.CreatePolice" />
+        <activity android:name=".Create.CreateFireService" />
+        <!-- Activity.MainActivity -->
+        <activity android:name=".EditActivity.EditAmbulance" />
+        <activity android:name=".Activity.SettingsActivity" />
+        <activity android:name=".EditActivity.EditFireService" />
+        <activity android:name=".EditActivity.EditPolice" />
+        <activity android:name=".Activity.MainActivity"></activity>
+    </application>
+
+</manifest>
