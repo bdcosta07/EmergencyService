@@ -19,7 +19,7 @@ public class MainActivity extends ESBaseActivity {
         setContentView(R.layout.activity_main);
 
         imgAmbulance=(ImageView)findViewById(R.id.imgAmbulance);
-        imgFireService=(ImageView)findViewById(R.id.imgFireService);
+        imgFireService=(ImageView)findViewById(R.id.imgFire);
         imgPolice=(ImageView)findViewById(R.id.imgPolice);
 
 

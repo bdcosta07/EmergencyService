@@ -10,26 +10,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.SplashActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.AdminActivity" />
-        <activity android:name=".Activity.AmbulanceActivity" />
-        <activity android:name=".Activity.PoliceActivity" />
-        <activity android:name=".Activity.FireServiceActivity" />
-        <activity android:name=".Create.CreateAmbulance" />
-        <activity android:name=".Create.CreatePolice" />
-        <activity android:name=".Create.CreateFireService" />
+        <activity android:name="com.kichukkhon.emergencyservice.Activity.AdminActivity" />
+        <activity android:name="com.kichukkhon.emergencyservice.Activity.AmbulanceActivity" />
+        <activity android:name="com.kichukkhon.emergencyservice.Activity.PoliceActivity" />
+        <activity android:name="com.kichukkhon.emergencyservice.Activity.FireServiceActivity" />
+        <activity android:name="com.kichukkhon.emergencyservice.Create.CreateAmbulance" />
+        <activity android:name="com.kichukkhon.emergencyservice.Create.CreatePolice" />
+        <activity android:name="com.kichukkhon.emergencyservice.Create.CreateFireService" />
         <!-- Activity.MainActivity -->
-        <activity android:name=".EditActivity.EditAmbulance" />
-        <activity android:name=".Activity.SettingsActivity" />
-        <activity android:name=".EditActivity.EditFireService" />
-        <activity android:name=".EditActivity.EditPolice" />
-        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name="com.kichukkhon.emergencyservice.EditActivity.EditAmbulance" />
+        <activity android:name="com.kichukkhon.emergencyservice.Activity.SettingsActivity" />
+        <activity android:name="com.kichukkhon.emergencyservice.EditActivity.EditFireService" />
+        <activity android:name="com.kichukkhon.emergencyservice.EditActivity.EditPolice"></activity>
     </application>
 
 </manifest>
