@@ -6,4 +6,5 @@
     <dimen name="margin_bottom">15dp</dimen>
     <dimen name="tv_text_size">20sp</dimen>
     <dimen name="et_text_size">18sp</dimen>
+    <dimen name="main_text_size">20sp</dimen>
 </resources>

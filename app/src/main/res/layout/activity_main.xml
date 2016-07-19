@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/windowBackground"
     tools:context=".Activity.MainActivity">
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
         <include
@@ -19,87 +19,98 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgPolice"
-                android:layout_width="150dp"
-                android:layout_height="120dp"
-                android:src="@drawable/police" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:text="@string/police_station"
-
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imgFireService"
-                android:layout_width="150dp"
-                android:layout_height="120dp"
-                android:src="@drawable/fire_service" />
-
-            <TextView
-                android:id="@+id/textVdiew"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:text="@string/fire_service"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:gravity="center">
 
-        <ImageView
-            android:id="@+id/imgAmbulance"
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:src="@drawable/ambulance" />
-
-        <TextView
-            android:id="@+id/textVddiew"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/ambulance"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:orientation="horizontal"
+            android:padding="10dp">
 
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPolice"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/police" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:text="@string/police_station"
+                    android:textSize="@dimen/main_text_size"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgFireService"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/fire_service" />
+
+                <TextView
+                    android:id="@+id/textVdiew"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:textSize="@dimen/main_text_size"
+                    android:text="@string/fire_service"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgAmbulance"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ambulance" />
+
+            <TextView
+                android:id="@+id/textVddiew"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/main_text_size"
+                android:text="@string/ambulance"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
