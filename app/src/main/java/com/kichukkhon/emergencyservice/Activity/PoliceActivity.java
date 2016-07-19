@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -15,6 +16,7 @@ import com.kichukkhon.emergencyservice.Class.PoliceInfo;
 import com.kichukkhon.emergencyservice.Create.CreatePolice;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.Database.PoliceManager;
+import com.kichukkhon.emergencyservice.Database.SharedPreference;
 import com.kichukkhon.emergencyservice.ESBaseActivity;
 import com.kichukkhon.emergencyservice.R;
 
@@ -28,6 +30,7 @@ public class PoliceActivity extends ESBaseActivity {
     PoliceAdapter policeAdapter;
     PoliceManager policeManager;
     AreaManager areaManager;
+    SharedPreference preference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,12 @@ public class PoliceActivity extends ESBaseActivity {
         policeList=new ArrayList<PoliceInfo>();
         policeManager=new PoliceManager(PoliceActivity.this);
         areaManager=new AreaManager(PoliceActivity.this);
+        Button btnCreate = (Button) findViewById(R.id.btnCreatePolice);
+
+        preference = new SharedPreference(this);
+
+        if(!preference.isLoggedIn())
+            btnCreate.setVisibility(View.GONE);
 
         List<Areas> areaList= areaManager.getAllAreas();
 

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -18,6 +19,7 @@ import com.kichukkhon.emergencyservice.Class.FireServiceInfo;
 import com.kichukkhon.emergencyservice.Create.CreateFireService;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.Database.FireServiceManager;
+import com.kichukkhon.emergencyservice.Database.SharedPreference;
 import com.kichukkhon.emergencyservice.ESBaseActivity;
 import com.kichukkhon.emergencyservice.R;
 
@@ -32,6 +34,7 @@ public class FireServiceActivity extends ESBaseActivity {
     FireServiceAdapter fireServiceAdapter;
     FireServiceManager fireServiceManager;
     AreaManager areaManager;
+    SharedPreference preference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,12 @@ public class FireServiceActivity extends ESBaseActivity {
         fireServiceList=new ArrayList<FireServiceInfo>();
         fireServiceManager=new FireServiceManager(FireServiceActivity.this);
         areaManager=new AreaManager(FireServiceActivity.this);
+        Button btnCreate = (Button) findViewById(R.id.btnCreateFireInfo);
+
+        preference = new SharedPreference(this);
+
+        if(!preference.isLoggedIn())
+            btnCreate.setVisibility(View.GONE);
 
         List<Areas> areaList= areaManager.getAllAreas();
 

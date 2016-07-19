@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="15dp">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -20,7 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Area"/>
+                android:text="@string/area"
+                android:layout_marginBottom="5dp"/>
             <TextView
                 android:id="@+id/tvOrgName"
                 android:layout_width="match_parent"
@@ -32,13 +34,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Address"/>
+                android:text="@string/address"/>
             <TextView
                 android:id="@+id/tvPhoneNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Phone"/>
+                android:text="@string/phone_no"/>
         </LinearLayout>
 
         <LinearLayout

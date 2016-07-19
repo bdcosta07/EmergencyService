@@ -13,29 +13,53 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Information"
+        android:text="@string/title_police_station"
         android:textSize="25sp"
         android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/area"
+        android:textSize="@dimen/tv_text_size"/>
     <Spinner
         android:id="@+id/spinnerArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/police_station"
+        android:textSize="@dimen/tv_text_size"/>
+
     <EditText
         android:id="@+id/txtPoliceStation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Police Station"
+        android:hint="@string/police_station"
         android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:textSize="@dimen/tv_text_size"/>
     <EditText
         android:id="@+id/txtAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Address"
+        android:hint="@string/address"
         android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_no"
+        android:textSize="@dimen/tv_text_size"/>
 
     <EditText
         android:id="@+id/txtPhoneNo"
@@ -45,19 +69,25 @@
         android:hint="Phone Number"
         android:textSize="20sp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_no_oc"
+        android:textSize="@dimen/tv_text_size"/>
+
     <EditText
         android:id="@+id/txtPhoneNoOc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Phone number of OC"
+        android:hint="@string/phone_no_oc"
         android:textSize="20sp"/>
     <Button
         android:id="@+id/btnSavePolice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Save"
+        android:text="@string/btn_save"
         android:textSize="20sp"
         android:onClick="btnSavePolice"/>
 </LinearLayout>
