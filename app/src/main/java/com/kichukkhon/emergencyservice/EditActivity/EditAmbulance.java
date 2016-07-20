@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.kichukkhon.emergencyservice.Activity.AmbulanceActivity;
 import com.kichukkhon.emergencyservice.Class.AmbulanceInfo;
 import com.kichukkhon.emergencyservice.Class.Areas;
+import com.kichukkhon.emergencyservice.Class.Utils;
 import com.kichukkhon.emergencyservice.Database.AmbulanceManager;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.R;
@@ -42,32 +43,24 @@ public class EditAmbulance extends AppCompatActivity {
 
         //ambulanceInfo = new AmbulanceInfo();
         manager = new AmbulanceManager(EditAmbulance.this);
-        areaManager=new AreaManager(EditAmbulance.this);
+        areaManager = new AreaManager(EditAmbulance.this);
 
         fillViews();
 
     }
 
-    public void fillViews(){
-        int id=getIntent().getIntExtra("id",0);
+    public void fillViews() {
+        int id = getIntent().getIntExtra("id", 0);
 
-        List<Areas> areaList= areaManager.getAllAreas();
+        List<Areas> areaList = areaManager.getAllAreas();
         ArrayAdapter<Areas> dataAdapter = new ArrayAdapter<Areas>(this, android.R.layout.simple_spinner_item, areaList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
-        ambulanceInfo=manager.getAmbulanceInfo(id);
+        ambulanceInfo = manager.getAmbulanceInfo(id);
 
-        int pos=0;
-        Areas area=areaManager.getAreaById(ambulanceInfo.getAreaId());
-        for (int i=0; i<spinnerArea.getCount();i++)
-        {
-            if(spinnerArea.getItemAtPosition(i).equals(area)){
-                pos=i;
-                break;
-            }
-        }
-        spinnerArea.setSelection(pos);
+        int selectedAreaId = ambulanceInfo.getAreaId();
+        spinnerArea.setSelection(Utils.getIndex(spinnerArea, selectedAreaId));
         txtOrgName.setText(ambulanceInfo.getOrgName());
         txtAddress.setText(ambulanceInfo.getAddress());
         txtPhoneNo.setText(ambulanceInfo.getPhoneNo());
@@ -79,17 +72,17 @@ public class EditAmbulance extends AppCompatActivity {
         String orgName = txtOrgName.getText().toString();
         String address = txtAddress.getText().toString();
         String phoneNo = txtPhoneNo.getText().toString();
-        int areaId =  ((Areas) spinnerArea.getSelectedItem()).getAreaId();
+        int areaId = ((Areas) spinnerArea.getSelectedItem()).getAreaId();
 
         ambulanceInfo.setOrgName(orgName);
         ambulanceInfo.setAddress(address);
         ambulanceInfo.setPhoneNo(phoneNo);
         ambulanceInfo.setAreaId(areaId);
 
-        AmbulanceManager manager=new AmbulanceManager(EditAmbulance.this);
-        int id=ambulanceInfo.getId();
+        AmbulanceManager manager = new AmbulanceManager(EditAmbulance.this);
+        int id = ambulanceInfo.getId();
 
-        boolean updated = manager.updateAmbulanceInfo(id,ambulanceInfo);
+        boolean updated = manager.updateAmbulanceInfo(id, ambulanceInfo);
         if (updated) {
             startActivity(intent);
             Toast.makeText(EditAmbulance.this, "Data Updated", Toast.LENGTH_SHORT).show();
@@ -107,13 +100,14 @@ public class EditAmbulance extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
 
                         Intent intent = new Intent(EditAmbulance.this, AmbulanceActivity.class);
-                        int ambulanceId=ambulanceInfo.getId();
-                        boolean deleted= manager.deleteAmbulanceInfo(ambulanceId);
+                        int ambulanceId = ambulanceInfo.getId();
+                        boolean deleted = manager.deleteAmbulanceInfo(ambulanceId);
 
                         if (deleted) {
                             startActivity(intent);
                             Toast.makeText(EditAmbulance.this, "Data Deleted", Toast.LENGTH_SHORT).show();
-                        } else Toast.makeText(EditAmbulance.this, "Data not Deleted", Toast.LENGTH_SHORT).show();
+                        } else
+                            Toast.makeText(EditAmbulance.this, "Data not Deleted", Toast.LENGTH_SHORT).show();
                     }
                 });
 

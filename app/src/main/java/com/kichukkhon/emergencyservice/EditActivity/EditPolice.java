@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.kichukkhon.emergencyservice.Activity.PoliceActivity;
 import com.kichukkhon.emergencyservice.Class.Areas;
 import com.kichukkhon.emergencyservice.Class.PoliceInfo;
+import com.kichukkhon.emergencyservice.Class.Utils;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.Database.PoliceManager;
 import com.kichukkhon.emergencyservice.R;
@@ -39,31 +40,23 @@ public class EditPolice extends AppCompatActivity {
         phoneNoET = (EditText) findViewById(R.id.txtPhoneNo);
         phoneNoOcET = (EditText) findViewById(R.id.txtPhoneNoOc);
         policeManager = new PoliceManager(EditPolice.this);
-        areaManager=new AreaManager(EditPolice.this);
+        areaManager = new AreaManager(EditPolice.this);
 
         fillViews();
     }
 
-    public void fillViews(){
-        int id=getIntent().getIntExtra("id",0);
+    public void fillViews() {
+        int id = getIntent().getIntExtra("id", 0);
 
-        List<Areas> areaList= areaManager.getAllAreas();
+        List<Areas> areaList = areaManager.getAllAreas();
         ArrayAdapter<Areas> dataAdapter = new ArrayAdapter<Areas>(this, android.R.layout.simple_spinner_item, areaList);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
-        policeInfo=policeManager.getPoliceInfo(id);
+        policeInfo = policeManager.getPoliceInfo(id);
 
-        int pos=0;
-        Areas area=areaManager.getAreaById(policeInfo.getAreaId());
-        for (int i=0; i<spinnerArea.getCount();i++)
-        {
-            if(spinnerArea.getItemAtPosition(i).equals(area)){
-                pos=i;
-                break;
-            }
-        }
-        spinnerArea.setSelection(pos);
+        int selectedAreaId = policeInfo.getAreaId();
+        spinnerArea.setSelection(Utils.getIndex(spinnerArea, selectedAreaId));
         policeStationET.setText(policeInfo.getPoliceStation());
         phoneNoET.setText(policeInfo.getPhoneNo());
         phoneNoOcET.setText(policeInfo.getPhoneNoOc());
@@ -75,17 +68,17 @@ public class EditPolice extends AppCompatActivity {
         String policeStation = policeStationET.getText().toString();
         String phoneNo = phoneNoET.getText().toString();
         String phoneNoOc = phoneNoOcET.getText().toString();
-        int areaId =  ((Areas) spinnerArea.getSelectedItem()).getAreaId();
+        int areaId = ((Areas) spinnerArea.getSelectedItem()).getAreaId();
 
         policeInfo.setPoliceStation(policeStation);
         policeInfo.setPhoneNo(phoneNo);
         policeInfo.setPhoneNoOc(phoneNoOc);
         policeInfo.setAreaId(areaId);
 
-        policeManager=new PoliceManager(EditPolice.this);
-        int id=policeInfo.getId();
+        policeManager = new PoliceManager(EditPolice.this);
+        int id = policeInfo.getId();
 
-        boolean updated = policeManager.updatePoliceInfo(id,policeInfo);
+        boolean updated = policeManager.updatePoliceInfo(id, policeInfo);
         if (updated) {
             startActivity(intent);
             Toast.makeText(EditPolice.this, "Data Updated", Toast.LENGTH_SHORT).show();
