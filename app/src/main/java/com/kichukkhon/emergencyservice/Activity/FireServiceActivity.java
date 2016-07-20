@@ -1,6 +1,8 @@
 package com.kichukkhon.emergencyservice.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +19,7 @@ import android.widget.Spinner;
 import com.kichukkhon.emergencyservice.Adapter.FireServiceAdapter;
 import com.kichukkhon.emergencyservice.Class.Areas;
 import com.kichukkhon.emergencyservice.Class.FireServiceInfo;
+import com.kichukkhon.emergencyservice.Class.Utils;
 import com.kichukkhon.emergencyservice.Create.CreateFireService;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.Database.FireServiceManager;
@@ -68,7 +71,13 @@ public class FireServiceActivity extends ESBaseActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
-        int selectedAreaId=1; //has to be fetched from pref
+        //selected area id from pref
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String preferredAreaId = sharedPref.getString("preferred_area_id", "");
+
+        int selectedAreaId = Integer.parseInt(preferredAreaId);
+        spinnerArea.setSelection(Utils.getIndex(spinnerArea, selectedAreaId));
+
         getData(selectedAreaId);
 
 
