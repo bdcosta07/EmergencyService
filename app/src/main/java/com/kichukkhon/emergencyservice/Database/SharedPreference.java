@@ -16,6 +16,7 @@ public class SharedPreference {
 
     private static final String PREFERENCE_NAME = "emergency_service";
     private static final String LOGIN_STATUS_KEY = "ISLOGGEDIN";
+    private static final String ALREADY_VISITED = "already_visited";
 
 
     public SharedPreference(Context context) {
@@ -44,6 +45,17 @@ public class SharedPreference {
     public boolean isLoggedIn() {
         boolean preferenceData = sharedPreferences.getBoolean(LOGIN_STATUS_KEY, false);
         return preferenceData;
+    }
+
+    public boolean AlreadyVisited() {
+        boolean prefData = sharedPreferences.getBoolean(ALREADY_VISITED, false);
+        return prefData;
+    }
+
+    public void setAlreadyVisitStatus(){
+        editor.putBoolean(ALREADY_VISITED, true);
+
+        editor.commit();
     }
 }
 
