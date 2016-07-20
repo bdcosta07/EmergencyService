@@ -17,10 +17,19 @@
             layout="@layout/toolbar" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/area"
+        android:textSize="20dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"/>
+
     <Spinner
         android:id="@+id/spinnerArea"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp">
 
     </Spinner>
     <ListView
