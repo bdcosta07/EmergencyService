@@ -60,5 +60,6 @@
         android:layout_gravity="center"
         android:text="CreateNew"
         android:onClick="btnCreatePoliceStation"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#fff"/>
 </LinearLayout>

@@ -61,5 +61,6 @@
         android:layout_gravity="center"
         android:text="CreateNew"
         android:onClick="btnCreateFireService"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#fff"/>
 </LinearLayout>

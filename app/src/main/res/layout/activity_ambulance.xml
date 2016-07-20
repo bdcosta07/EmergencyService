@@ -62,6 +62,7 @@
             android:text="CreateNew"
             android:textSize="20sp"
             android:onClick="btnCreateAmbulance"
-            android:layout_gravity="bottom|center"/>
+            android:layout_gravity="bottom|center"
+            android:textColor="#fff"/>
 
 </LinearLayout>

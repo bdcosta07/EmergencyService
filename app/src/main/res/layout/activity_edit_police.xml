@@ -8,6 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:background="@color/bg_color"
     tools:context="com.kichukkhon.emergencyservice.EditActivity.EditPolice">
 
     <TextView
@@ -55,7 +56,8 @@
             android:layout_gravity="center"
             android:text="Save"
             android:textSize="20sp"
-            android:onClick="btnSavePolice"/>
+            android:onClick="btnSavePolice"
+            android:textColor="#fff"/>
         <Button
             android:id="@+id/btnDeletePolice"
             android:layout_width="wrap_content"
@@ -63,7 +65,8 @@
             android:layout_gravity="center"
             android:text="Delete"
             android:textSize="20sp"
-            android:onClick="btnDeletePolice"/>
+            android:onClick="btnDeletePolice"
+            android:textColor="#fff"/>
 
     </LinearLayout>
 </LinearLayout>
