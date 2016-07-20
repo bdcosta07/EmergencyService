@@ -45,6 +45,7 @@ public class PoliceActivity extends ESBaseActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         lvPoliceStation=(ListView)findViewById(R.id.lvPolice);

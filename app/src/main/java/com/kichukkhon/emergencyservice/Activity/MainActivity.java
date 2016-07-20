@@ -30,6 +30,7 @@ public class MainActivity extends ESBaseActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(mToolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         imgAmbulance=(ImageView)findViewById(R.id.imgAmbulance);

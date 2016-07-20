@@ -17,6 +17,17 @@
             layout="@layout/toolbar" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnCreatePolice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="CreateNew"
+        android:onClick="btnCreatePoliceStation"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_margin="10dp"/>
+
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view2"
@@ -53,13 +64,5 @@
         android:layout_marginRight="15dp">
 
     </ListView>
-    <Button
-        android:id="@+id/btnCreatePolice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="CreateNew"
-        android:onClick="btnCreatePoliceStation"
-        android:textSize="20sp"
-        android:textColor="#fff"/>
+
 </LinearLayout>
