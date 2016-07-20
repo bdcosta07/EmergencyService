@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kichukkhon.emergencyservice.Class.Areas;
@@ -27,7 +28,7 @@ public class FireServiceAdapter extends ArrayAdapter {
         TextView tvAreaName;
         TextView tvAddress;
         TextView tvPhoneNo;
-        Button btnEdit, btnCall;
+        ImageButton btnEdit, btnCall;
         int id;
     }
 
@@ -55,8 +56,8 @@ public class FireServiceAdapter extends ArrayAdapter {
             viewHolder.tvAreaName = (TextView) rowView.findViewById(R.id.tvArea);
             viewHolder.tvAddress = (TextView) rowView.findViewById(R.id.tvAddress);
             viewHolder.tvPhoneNo = (TextView) rowView.findViewById(R.id.tvPhoneNo);
-            viewHolder.btnEdit = (Button) rowView.findViewById(R.id.btnEdit);
-            viewHolder.btnCall = (Button) rowView.findViewById(R.id.btnCall);
+            viewHolder.btnEdit = (ImageButton) rowView.findViewById(R.id.btnEdit);
+            viewHolder.btnCall = (ImageButton) rowView.findViewById(R.id.btnCall);
             rowView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rowView.getTag();

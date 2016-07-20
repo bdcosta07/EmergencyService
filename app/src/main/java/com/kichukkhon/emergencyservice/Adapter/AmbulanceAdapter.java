@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kichukkhon.emergencyservice.Class.AmbulanceInfo;
@@ -28,7 +29,7 @@ public class AmbulanceAdapter extends ArrayAdapter {
         TextView tvOrgName;
         TextView tvAddress;
         TextView tvPhoneNo;
-        Button btnEdit, btnCall;
+        ImageButton btnEdit, btnCall;
         int id;
     }
 
@@ -57,8 +58,8 @@ public class AmbulanceAdapter extends ArrayAdapter {
             viewHolder.tvOrgName = (TextView) rowView.findViewById(R.id.tvOrgName);
             viewHolder.tvAddress = (TextView) rowView.findViewById(R.id.tvAddress);
             viewHolder.tvPhoneNo = (TextView) rowView.findViewById(R.id.tvPhoneNo);
-            viewHolder.btnEdit = (Button) rowView.findViewById(R.id.btnEdit);
-            viewHolder.btnCall = (Button) rowView.findViewById(R.id.btnCall);
+            viewHolder.btnEdit = (ImageButton) rowView.findViewById(R.id.btnEdit);
+            viewHolder.btnCall = (ImageButton) rowView.findViewById(R.id.btnCall);
             rowView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rowView.getTag();

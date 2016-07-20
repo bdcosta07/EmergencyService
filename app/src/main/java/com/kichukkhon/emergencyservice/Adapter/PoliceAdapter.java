@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.kichukkhon.emergencyservice.Class.Areas;
@@ -28,7 +29,7 @@ public class PoliceAdapter extends ArrayAdapter {
     TextView tvPoliceStation;
     TextView tvPhoneNo;
     TextView tvPhoneNoOc;
-    Button btnEdit, btnCall,btnCallOc;
+    ImageButton btnEdit, btnCall,btnCallOc;
     int id;
 }
 
@@ -57,9 +58,9 @@ public class PoliceAdapter extends ArrayAdapter {
             viewHolder.tvPoliceStation = (TextView) rowView.findViewById(R.id.tvThana);
             viewHolder.tvPhoneNo = (TextView) rowView.findViewById(R.id.tvPhoneNo);
             viewHolder.tvPhoneNoOc = (TextView) rowView.findViewById(R.id.tvPhoneNoOc);
-            viewHolder.btnEdit = (Button) rowView.findViewById(R.id.btnEdit);
-            viewHolder.btnCall = (Button) rowView.findViewById(R.id.btnCall);
-            viewHolder.btnCallOc=(Button)rowView.findViewById(R.id.btnCallOc);
+            viewHolder.btnEdit = (ImageButton) rowView.findViewById(R.id.btnEdit);
+            viewHolder.btnCall = (ImageButton) rowView.findViewById(R.id.btnCall);
+            viewHolder.btnCallOc=(ImageButton) rowView.findViewById(R.id.btnCallOc);
             rowView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rowView.getTag();
@@ -73,8 +74,8 @@ public class PoliceAdapter extends ArrayAdapter {
 
         viewHolder.tvAreaName.setText(area != null ? area.getAreaName() : "");
         viewHolder.tvPoliceStation.setText(policeList.get(position).getPoliceStation());
-        viewHolder.tvPhoneNo.setText(policeList.get(position).getPhoneNo());
-        viewHolder.tvPhoneNoOc.setText(policeList.get(position).getPhoneNoOc());
+        viewHolder.tvPhoneNo.setText(policeList.get(position).getPhoneNo()+" (Duty Officer)");
+        viewHolder.tvPhoneNoOc.setText(policeList.get(position).getPhoneNoOc()+" (Call OC)");
 
         viewHolder.btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
