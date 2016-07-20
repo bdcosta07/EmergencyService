@@ -74,7 +74,7 @@ public class FireServiceActivity extends ESBaseActivity {
 
         //selected area id from pref
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String preferredAreaId = sharedPref.getString("preferred_area_id", "");
+        String preferredAreaId = sharedPref.getString("preferred_area_id", "1");
 
         int selectedAreaId = Integer.parseInt(preferredAreaId);
         spinnerArea.setSelection(Utils.getIndex(spinnerArea, selectedAreaId));
