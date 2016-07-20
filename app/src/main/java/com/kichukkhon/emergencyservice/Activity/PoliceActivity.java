@@ -1,6 +1,8 @@
 package com.kichukkhon.emergencyservice.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,7 @@ import android.widget.Spinner;
 import com.kichukkhon.emergencyservice.Adapter.PoliceAdapter;
 import com.kichukkhon.emergencyservice.Class.Areas;
 import com.kichukkhon.emergencyservice.Class.PoliceInfo;
+import com.kichukkhon.emergencyservice.Class.Utils;
 import com.kichukkhon.emergencyservice.Create.CreatePolice;
 import com.kichukkhon.emergencyservice.Database.AreaManager;
 import com.kichukkhon.emergencyservice.Database.PoliceManager;
@@ -63,8 +66,16 @@ public class PoliceActivity extends ESBaseActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerArea.setAdapter(dataAdapter);
 
-        int selectedAreaId=1; //has to be fetched from pref
-        getData(selectedAreaId);  spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        //selected area id from pref
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String preferredAreaId = sharedPref.getString("preferred_area_id", "");
+
+        int selectedAreaId = Integer.parseInt(preferredAreaId);
+        spinnerArea.setSelection(Utils.getIndex(spinnerArea, selectedAreaId));
+        
+        getData(selectedAreaId);
+
+        spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
